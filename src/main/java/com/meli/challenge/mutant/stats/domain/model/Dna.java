@@ -2,6 +2,8 @@
  */
 package com.meli.challenge.mutant.stats.domain.model;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -13,6 +15,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * 
  */
 @Document(collection = "dna")
-public interface  Dna {
+public abstract class  Dna {
 
+	private boolean mutant;
+	private List<String> dna;
 }
