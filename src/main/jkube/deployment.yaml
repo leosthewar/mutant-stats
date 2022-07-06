@@ -1,0 +1,21 @@
+spec:
+  template:
+    spec:
+      volumes:
+        - name: volume-stats-detector
+          configMap:
+            name: mutant-stats-config
+      containers:
+        - resources:
+            limits:
+              cpu: 100m
+              memory: 256Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
+          env:
+            - name: SPRING_CONFIG_LOCATION
+              value: /data/application.properties
+          volumeMounts:
+            - name: volume-mutant-stats
+              mountPath: /data
