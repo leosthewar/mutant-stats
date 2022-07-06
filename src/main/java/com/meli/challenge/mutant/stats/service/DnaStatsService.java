@@ -47,14 +47,14 @@ public class DnaStatsService {
 	 * @return
 	 */
 	private BigDecimal calculateRatio (DnaStats dnaStats) {
-		BigDecimal ratio = BigDecimal.ZERO;
+		BigDecimal ratio = BigDecimal.valueOf(0);
 		if (dnaStats.getCountMutant() != 0) {
 			if (dnaStats.getCountHuman() != 0) {
 				BigDecimal countMutant = BigDecimal.valueOf(dnaStats.getCountMutant());
 				BigDecimal countHuman = BigDecimal.valueOf(dnaStats.getCountHuman());
 				ratio = countMutant.divide(countHuman, 3, RoundingMode.HALF_EVEN);
 			} else {
-				ratio = BigDecimal.ONE;
+				ratio = BigDecimal.valueOf(-1);
 			}
 		}
 		return ratio;
