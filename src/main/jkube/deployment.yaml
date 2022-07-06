@@ -3,7 +3,7 @@ spec:
   template:
     spec:
       volumes:
-        - name: volume-stats-detector
+        - name: volume-mutant-stats
           configMap:
             name: mutant-stats-config
       containers:
